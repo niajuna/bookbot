@@ -17,15 +17,21 @@ def get_book_text(file_path):
     return content
 
 def main():
+    # Check for command-line argument
     if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
+
+    # Set the book path from command-line argument
     book_path = sys.argv[1]
+
+    # Read the book text
     book_text = get_book_text(book_path)
     num_words = count_words(book_text)
     char_counts = count_characters(book_text)
     sort_char_counts = sort_character_counts(char_counts)
 
+    # Output the results
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_path}...")
     print("----------- Word Count ----------")
